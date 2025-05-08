@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto e Obra</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('fundo.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 30px;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .gif-logo {
+      width: 300px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .imagens {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    .imagens button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      width: 150px;
+      height: 100px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imagens button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .imagens button:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .imagens button:first-child {
+      margin-left: 30px;
+    }
+
+    .imagens button:last-child {
+      margin-right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="gif-logo" src="DS_Engenharia_Video.gif" alt="DS Engenharia">
+
+    <div class="imagens">
+      <button data-target="pagina_projeto_arquitetonico.html">
+        <img src="Project_Arquitetonico.png" alt="Construção 1">
+      </button>
+      <button data-target="pagina2.html">
+        <img src="Project_Estrututal.png" alt="Construção 2">
+      </button>
+      <button data-target="pagina3.html">
+        <img src="Project_Eletrico.png" alt="Construção 3">
+      </button>
+      <button data-target="pagina4.html">
+        <img src="Project_Hidrossanitario.png" alt="Construção 4">
+      </button>
+      <button data-target="pagina5.html">
+        <img src="Execucao.png" alt="Construção 5">
+      </button>
+      <button data-target="pagina6.html">
+        <img src="Orcamento.png" alt="Construção 6">
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll("button[data-target]").forEach(button => {
+      button.addEventListener("click", function () {
+        const target = this.getAttribute("data-target");
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
