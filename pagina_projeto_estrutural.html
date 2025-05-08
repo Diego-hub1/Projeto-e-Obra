@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Entre em Contato</title>
   <style>
+    /* Seu CSS permanece igual */
     body {
       margin: 0;
       padding: 0;
@@ -108,12 +109,23 @@
       font-size: 18px;
       color: #2c3e50;
     }
+
+    .mapa {
+      margin-top: 20px;
+    }
+
+    .mapa iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Entre em Contato</h1>
-    <form>
+    <form id="form-contato">
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" required>
 
@@ -140,12 +152,44 @@
         13:30h às 17:30
       </p>
 
-      <!-- WhatsApp sem link e sem título -->
       <div class="whatsapp-container">
         <img src="WhatsApp.png" alt="WhatsApp">
         <span>+55 9 99213-5739</span>
       </div>
+
+      <div class="mapa">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840717.759019112!2d-65.58588238112996!3d-10.94203419043362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1e73d98c7b69%3A0x82858d91b5a4c6f!2zUm9uZG9uw6lh!5e0!3m2!1spt-BR!2sbr!4v1715094988841!5m2!1spt-BR!2sbr" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
   </div>
+
+  <script>
+    document.getElementById("form-contato").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+
+      const dados = new FormData(form);
+      const url = "https://script.google.com/macros/s/AKfycbz95tEzD-_cRhr1xMYPme78gG_lke3FCPqXhM0LdWLspt8Ica99fo8cCotmy39kmGqFhg/exec";
+
+      fetch(url, {
+        method: "POST",
+        body: dados
+      })
+      .then(response => response.text())
+      .then(msg => {
+        alert("Dados enviados com sucesso!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Erro ao enviar os dados. Tente novamente.");
+        console.error("Erro:", error);
+      });
+    });
+  </script>
 </body>
 </html>
