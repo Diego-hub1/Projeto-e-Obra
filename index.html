@@ -31,6 +31,7 @@
       text-align: center;
       max-width: 800px;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      position: relative;
     }
 
     .gif-logo {
@@ -39,6 +40,26 @@
       margin-bottom: 10px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .social-btns {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btns a img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .social-btns a img:hover {
+      transform: scale(1.1);
     }
 
     .imagens {
@@ -74,20 +95,24 @@
     .imagens button:hover {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-
-    .imagens button:first-child {
-      margin-left: 30px;
-    }
-
-    .imagens button:last-child {
-      margin-right: 30px;
-    }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Botões Sociais -->
+    <div class="social-btns">
+      <a href="https://www.instagram.com/ds__engenharia_/" target="_blank">
+        <img src="instagram.jpg" alt="Instagram">
+      </a>
+      <a href="https://br.linkedin.com/in/diego-de-sousa-salgado-b57b0535a" target="_blank">
+        <img src="Linkedin.png" alt="LinkedIn">
+      </a>
+    </div>
+
+    <!-- Logo -->
     <img class="gif-logo" src="DS_Engenharia_Video.gif" alt="DS Engenharia">
 
+    <!-- Botões de Projetos -->
     <div class="imagens">
       <button data-target="pagina_projeto_arquitetonico.html">
         <img src="Project_Arquitetonico.png" alt="Construção 1">
@@ -123,6 +148,15 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
